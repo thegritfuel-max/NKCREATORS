@@ -181,26 +181,6 @@ export default function App() {
       {/* WhatsApp Floating Advisory connection */}
       <WhatsAppFloating />
 
-      {/* Sticky Quick Contact button for mobile touch targets */}
-      <div className="fixed bottom-[96px] right-6 z-30 lg:hidden flex flex-col gap-3" id="mobile-sticky-floator">
-        <a
-          href="#contact"
-          onClick={(e) => {
-            e.preventDefault();
-            const contactSec = document.getElementById('contact');
-            if (contactSec) {
-              contactSec.scrollIntoView({ behavior: 'smooth' });
-            }
-          }}
-          className="p-4 bg-[#00529C] rounded-full text-white shadow-2xl flex items-center justify-center border border-white/20 active:scale-95 transition-transform"
-          title="Connect to Office"
-          id="sticky-mobile-phone-fab"
-        >
-          {/* 44px touch-target standard satisfied via padding classes plus size configuration */}
-          <CalendarCheck size={20} />
-        </a>
-      </div>
-
     </div>
   );
 }
