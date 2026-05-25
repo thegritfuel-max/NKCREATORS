@@ -57,10 +57,10 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 border-b ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 border-b backdrop-blur-md ${
           isScrolled
-            ? 'bg-white/95 py-4 border-slate-200 shadow-lg shadow-slate-200/40'
-            : 'bg-white py-5 border-slate-100'
+            ? 'bg-white/90 py-2 border-slate-200/80 shadow-md shadow-slate-200/20'
+            : 'bg-white/95 py-3 border-slate-100'
         }`}
         id="app-header"
       >
@@ -71,13 +71,13 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-3" id="desktop-nav-menu">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2.5" id="desktop-nav-menu">
             {navItems.map((item) => (
               <a
                 key={item.id}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
-                className={`px-3 py-2 text-sm xl:text-base font-sans uppercase tracking-wider transition-all duration-300 rounded-md relative group ${
+                className={`px-2 py-1 text-xs xl:text-sm font-sans uppercase tracking-wider transition-all duration-200 rounded-md relative group ${
                   activeSegment === item.id
                     ? 'text-[#00529C] font-black'
                     : 'text-slate-700 hover:text-[#00529C] font-extrabold'
@@ -87,7 +87,7 @@ export default function Navbar() {
                 {item.label}
                 {/* Micro underline indicator */}
                 <span
-                  className={`absolute bottom-0 left-3 right-3 h-[3px] bg-[#00529C] rounded-full transition-transform duration-300 ${
+                  className={`absolute bottom-0 left-2 right-2 h-[2.5px] bg-[#00529C] rounded-full transition-transform duration-300 ${
                     activeSegment === item.id ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-75'
                   }`}
                 />
@@ -96,47 +96,47 @@ export default function Navbar() {
           </nav>
 
           {/* Desktop CTA */}
-          <div className="hidden lg:flex items-center gap-6" id="desktop-cta-container">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6" id="desktop-cta-container">
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="flex items-center gap-2 text-sm font-sans uppercase text-slate-800 hover:text-[#00529C] transition-colors font-bold whitespace-nowrap"
+              className="flex items-center gap-2.5 text-xs xl:text-sm font-sans uppercase text-slate-800 hover:text-[#00529C] transition-colors font-bold whitespace-nowrap"
               id="header-phone-cta"
             >
-              <CalendarCheck size={15} className="text-[#00529C]" />
+              <CalendarCheck size={14} className="text-[#00529C]" />
               <span className="whitespace-nowrap">Consultation Desk</span>
             </a>
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="relative inline-flex items-center justify-center px-6 py-3 text-xs xl:text-sm font-sans uppercase tracking-widest font-black text-white bg-[#00529C] rounded-full hover:scale-[1.03] hover:bg-[#003970] transition-all duration-300 shadow-md shadow-blue-900/10 border border-[#00529C]/30 cursor-pointer overflow-hidden"
+              className="relative inline-flex items-center justify-center px-4.5 py-2 text-[10px] xl:text-xs font-sans uppercase tracking-widest font-black text-white bg-[#00529C] rounded-full hover:scale-[1.03] hover:bg-[#003970] transition-all duration-300 shadow-sm shadow-blue-900/10 border border-[#00529C]/30 cursor-pointer overflow-hidden"
               id="header-book-cta"
             >
-              <span className="relative z-10 flex items-center gap-2">
-                <CalendarCheck size={15} />
+              <span className="relative z-10 flex items-center gap-1.5">
+                <CalendarCheck size={13} />
                 Contact Office
               </span>
             </a>
           </div>
 
           {/* Mobile Right Controls */}
-          <div className="flex lg:hidden items-center gap-3" id="mobile-controls-wrapper">
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-3" id="mobile-controls-wrapper">
             <a
               href="#contact"
               onClick={(e) => handleNavClick(e, '#contact')}
-              className="p-2.5 rounded-full border border-slate-300 bg-white text-[#00529C] shadow-sm flex items-center justify-center"
+              className="p-2 sm:p-2.5 rounded-full border border-slate-300 bg-white text-[#00529C] shadow-sm flex items-center justify-center transform active:scale-95 transition-transform"
               title="Inquire to Office"
               id="mobile-phone-trigger"
             >
-              <CalendarCheck size={18} />
+              <CalendarCheck size={16} />
             </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-full border border-slate-300 bg-white text-slate-900 shadow-sm focus:outline-none cursor-pointer font-bold"
+              className="p-2 sm:p-2.5 rounded-full border border-slate-300 bg-white text-slate-900 shadow-sm focus:outline-none cursor-pointer font-bold transform active:scale-95 transition-transform"
               aria-label="Toggle menu"
               id="mobile-hamburger-trigger"
             >
-              {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+              {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
           </div>
         </div>

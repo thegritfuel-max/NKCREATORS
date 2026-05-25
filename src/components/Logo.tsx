@@ -15,12 +15,12 @@ export default function Logo({ className = '', showText = true, monochrome = fal
   return (
     <div className={`flex items-center ${className}`} id="logo-container">
       {/* High-fidelity Brand Logo Image */}
-      <div className="relative flex items-center h-12 sm:h-14 overflow-hidden rounded-lg hover:opacity-90 transition-opacity" id="logo-branding-wrapper">
+      <div className="relative flex items-center h-9 sm:h-11 overflow-hidden rounded-lg hover:opacity-90 transition-opacity" id="logo-branding-wrapper">
         <img
           src="https://i.ibb.co/PzhZDRh1/Screenshot-2026-05-25-220507.png"
           alt="Nitin Kesarkar & Associates Logo"
           referrerPolicy="no-referrer"
-          className="h-full object-contain max-w-[200px] sm:max-w-[260px]"
+          className="h-full object-contain max-w-[180px] sm:max-w-[240px]"
           id="logo-img"
         />
       </div>
